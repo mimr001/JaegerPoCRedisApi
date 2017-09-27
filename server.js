@@ -28,16 +28,12 @@ const tracers = [metricsTracer, jaegerTracer]
 const instrument = new Instrument({
   tracers: tracers
 })
-
-// Extra cfg needed for redis instrumentation
-// const instrumentation = require('@risingstack/opentracing-auto/src/instrumentation/redis')
 ////////////////////// END Jaeger Stuff /////////////////////////
 
 // THESE GET AUTO INSTRUMENTED THANKS TO THE FIRST LINE
 const express = require('express')
 const http = require('http')
 const redis = require('redis')
-// instrumentation.patch(redis, tracers)
 
 var app = express()
 // var redisClient = redis.createClient(6379, 'redis')
